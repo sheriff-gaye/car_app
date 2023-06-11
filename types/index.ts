@@ -34,13 +34,18 @@ export interface carProps {
 
 
 export interface filterProps{
-    manufacturer:string;
+    manufacturer?:string;
     year:number;
     limit:number;
     fuel:string;
     model:string;
 
 }
+
+
+export interface HomeProps {
+    searchParams: filterProps;
+  }  
 
 export interface OptionProps{
     title:string;

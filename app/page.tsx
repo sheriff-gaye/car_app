@@ -6,13 +6,14 @@ import { fetchCars } from "@/utils";
 import CarCard from "@/components/CarCard";
 import { fuels, yearsOfProduction } from "@/constants";
 import ShowMore from "@/components/ShowMore";
+import { HomeProps } from "@/types";
 
-export default async function Home({searchParams}) {
+export default async function Home({searchParams}:HomeProps) {
   const allcars= await fetchCars({
-    manufacturer:searchParams.maufacturer || '',
-    year:searchParams.year || '2022',
+    manufacturer:searchParams.manufacturer || '',
+    year:searchParams.year || 2022,
     fuel:searchParams.fuel || '',
-    limit:searchParams.limit || '10',
+    limit:searchParams.limit || 10,
     model:searchParams.model || ''
   });
 
